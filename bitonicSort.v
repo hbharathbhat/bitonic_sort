@@ -20,20 +20,20 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bitonicSort(input [7:0] in1, in2, in3, in4, in5, in6, in7, in8,
+module bitonicSort #(parameter WIDTH = 8)(input [WIDTH-1:0] in1, in2, in3, in4, in5, in6, in7, in8,
                    input clk,
-                   output reg [7:0] out1, out2, out3, out4, out5, out6, out7, out8
+                   output reg [WIDTH-1:0] out1, out2, out3, out4, out5, out6, out7, out8
 );
-    reg [7:0] stage11, stage12, stage13, stage14, stage15, stage16, stage17, stage18;
-    reg [7:0] stage21, stage22, stage23, stage24, stage25, stage26, stage27, stage28;
-    reg [7:0] stage31, stage32, stage33, stage34, stage35, stage36, stage37, stage38;
-    reg [7:0] stage41, stage42, stage43, stage44, stage45, stage46, stage47, stage48;
-    reg [7:0] stage51, stage52, stage53, stage54, stage55, stage56, stage57, stage58;
-    reg [7:0] stage61, stage62, stage63, stage64, stage65, stage66, stage67, stage68;
+    reg [WIDTH-1:0] stage11, stage12, stage13, stage14, stage15, stage16, stage17, stage18;
+    reg [WIDTH-1:0] stage21, stage22, stage23, stage24, stage25, stage26, stage27, stage28;
+    reg [WIDTH-1:0] stage31, stage32, stage33, stage34, stage35, stage36, stage37, stage38;
+    reg [WIDTH-1:0] stage41, stage42, stage43, stage44, stage45, stage46, stage47, stage48;
+    reg [WIDTH-1:0] stage51, stage52, stage53, stage54, stage55, stage56, stage57, stage58;
+    reg [WIDTH-1:0] stage61, stage62, stage63, stage64, stage65, stage66, stage67, stage68;
 
     task comparator;
-        input [7:0] i1, i2;
-        output [7:0] o1, o2;
+        input [WIDTH-1:0] i1, i2;
+        output [WIDTH-1:0] o1, o2;
 
         begin
             if (i1 > i2)
